@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /Zero%20Hunger/Frontend/
+Disallow: /Zero%20Hunger/Backend/
+Disallow: /Zero%20Hunger/uploads/
+Disallow: /Zero%20Hunger/admin/
+
+Sitemap: http://localhost/sitemap.xml
