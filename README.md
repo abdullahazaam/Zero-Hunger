@@ -1,66 +1,43 @@
 # Zero Hunger
 
-Zero Hunger is a PHP/MySQL portfolio project exploring how surplus food can move from donors to NGOs and community recipients through a trackable rider-delivery workflow.
+Zero Hunger is a student project based on the problem of usable food being wasted while nearby organisations may need it. The application is a PHP and MySQL prototype that connects food donors, NGOs, riders and administrators.
 
-## Problem and approach
+## How it works
 
-Usable food is often wasted while nearby communities need affordable access to meals. The application models a role-based redistribution flow instead of a simple listing page: donors publish available food, NGOs claim suitable donations, riders complete delivery, and administrators monitor activity.
+1. A donor lists available food.
+2. An NGO reviews the listing and sends a request.
+3. The donor accepts or rejects the request.
+4. A rider can be assigned to collect and deliver the food.
+5. The users can follow the request and delivery status.
 
-## Features in the repository
+## Main features
 
-- Donor, NGO/receiver, rider, and administrator roles
-- Registration, login, email verification, password reset, and profile management
-- Food donation listing and location-aware discovery
-- Donation claims and delivery setup
-- Rider enrolment, assignment, delivery status, and ratings
-- Direct messages and email/push notification hooks
-- Admin dashboards for users, donations, requests, riders, deliveries, feedback, activity logs, and reports
-- English and Urdu language resources
-- Invoice and report/export flows
+- Registration and sign-in for different user roles
+- Food donation listings and requests
+- Donor and NGO dashboards
+- Rider assignment and delivery tracking
+- Messages and notifications
+- Admin screens for users and activity
+- Feedback after a completed delivery
 
 ## Technology
 
-- PHP with MySQLi
-- MySQL/MariaDB
-- HTML, CSS, Bootstrap, and JavaScript
-- Session-based authentication
-- Progressive-web-app support files
+- PHP
+- MySQL
+- HTML, CSS and JavaScript
+- Bootstrap
 
-## Structure
+## Running it locally
 
-```text
-Zero-Hunger/
-├── Frontend/   Public pages and role dashboards
-└── Backend/    Database connection, admin tools, reports, and shared logic
-```
+1. Place the project in your local web-server folder, such as `htdocs` for XAMPP.
+2. Create a MySQL database.
+3. Update the database settings in `Config/db.php`.
+4. Import the project database schema if it is available in your copy.
+5. Open the project through Apache.
 
-## Local setup
+The repository does not currently include a complete migration or schema setup, so a fresh installation still needs that work. Automated tests are also not included yet.
 
-1. Install PHP 8+ and MySQL/MariaDB (XAMPP is suitable for local development).
-2. Place the repository inside the web server document root.
-3. Create a `zero_hunger` database.
-4. Provide the schema used by the application and configure local values in `Backend/db.php`.
-5. Update local site URLs and optional mail/push settings without committing real credentials.
-6. Open `Frontend/` through the local web server.
+## Project status
 
-> The repository currently does not include a clean, data-free database migration/schema file. That is a documented setup limitation and the highest-priority portability improvement.
-
-## Verification
-
-The included GitHub workflow performs syntax checks on tracked PHP files. A database-backed automated test suite is not currently present; functional claims should therefore be demonstrated with a local walkthrough rather than described as fully tested.
-
-## Security notes
-
-- Do not commit real SMTP, OAuth, database, VAPID, or analytics credentials.
-- Uploaded identity/profile files must be validated and stored outside executable paths for a real deployment.
-- Database queries should continue moving toward prepared statements and centralised validation.
-- Production use requires CSRF protection, authorization tests, HTTPS, audit review, backups, and privacy controls.
-
-## Portfolio status
-
-Zero Hunger is best presented as a social-impact full-stack prototype. Its strongest portfolio value is the multi-role business workflow; the next engineering milestone is a reproducible schema plus automated tests.
-
-## Author
-
-**Abdullah Azaam** — web developer working with PHP, Laravel, ASP.NET Core, C#, and SQL databases.
+This is a portfolio prototype rather than a production charity platform. A live deployment would need a repeatable database setup, stronger security review, file-upload protection, email configuration and full end-to-end testing.
 
